@@ -40,11 +40,19 @@ class Html extends Component {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <style id="css" dangerouslySetInnerHTML={{__html: this.props.css}} />
+
+        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css"/>
+        <link rel="stylesheet" href="/font-awesome/css/font-awesome.css"/>
+
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{__html: this.props.body}} />
         <script src={this.props.entry}></script>
         <script dangerouslySetInnerHTML={this.trackingCode()} />
+        <script src="/jquery/dist/jquery.min.js"></script>
+        <script src="/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/qwest/qwest.min.js"></script>
       </body>
       </html>
     );
