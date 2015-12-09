@@ -45,14 +45,14 @@ router.get('/', async (req, res, next) => {
     let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.js');
     if (!(await fileExists(fileName))) {
       fileName = join(CONTENT_DIR, path + '/index.js');
-    } else {
-      console.error('File %s does not exists. Result is %s', fileName, fileExists(fileName));
     }
+
+    const route = path === '/' ? 'index' : path.substring(1);
 
     if (!(await fileExists(fileName))) {
       res.status(404).send({error: `The page '${path}' is not found.`});
     } else {
-      const htmlContent = ReactDOM.renderToString(React.createElement(Content['index']));
+      const htmlContent = ReactDOM.renderToString(React.createElement(Content[route]));
       const content = Object.assign({path, content: htmlContent}, {
         title: 'React.js Starter Kit',
         component: 'ContentPage'
