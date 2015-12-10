@@ -9,6 +9,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/server';
 import Index from '../content/index.js';
 import Content from '../content';
+import passport from 'passport';
 
 
 // A folder with Jade/Markdown/HTML content pages
@@ -31,6 +32,24 @@ const router = new Router();
 //router.get('/', async (req, res, next) => {
 //  renderWithJade(req, res, next);
 //});
+
+
+// =====================================
+// FACEBOOK ROUTES =====================
+// =====================================
+// send to google to do the authentication profile gets us their basic
+// information including their name email gets their emails
+router.get('/user/auth/facebook',
+  passport.authenticate('facebook', {
+    scope : ['email']
+}));
+
+// the callback after google has authenticated the user
+router.get('/user/auth/facebook/callback',
+  passport.authenticate('facebook', {
+    successRedirect : '/user/#',
+    failureRedirect : '/user/login'
+}));
 
 router.get('/', async (req, res, next) => {
   try {
