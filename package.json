@@ -24,6 +24,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",
     "react": "0.14.2",
+    "react-bootstrap": "^0.28.1",
     "react-dom": "0.14.2",
     "react-routing": "0.0.5",
     "redux": "^3.0.4",
