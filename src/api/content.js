@@ -4,7 +4,6 @@ import fs from 'fs';
 import { join } from 'path';
 import { Router } from 'express';
 import Promise from 'bluebird';
-import jade from 'jade';
 import fm from 'front-matter';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
