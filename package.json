@@ -23,6 +23,7 @@
     "normalize.css": "3.0.3",
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",
+    "passport-google-oauth": "^0.2.0",
     "react": "0.14.2",
     "react-bootstrap": "^0.28.1",
     "react-dom": "0.14.2",
